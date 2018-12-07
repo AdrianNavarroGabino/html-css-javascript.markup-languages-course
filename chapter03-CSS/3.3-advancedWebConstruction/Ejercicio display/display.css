@@ -1,0 +1,12 @@
+li {
+	list-style-type: none;
+	display: inline;
+	padding: 20px;
+}
+
+a {
+	color: green;
+	text-decoration-line: none;
+	background-color: yellow;
+	border: red 1px solid;
+}

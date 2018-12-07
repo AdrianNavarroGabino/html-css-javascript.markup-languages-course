@@ -1,0 +1,25 @@
+body{
+	font-size: small;
+	font-family: Verdana, Helvetica, Arial, Sans-serif;
+	line-height: 1.6em;
+}
+
+h1 {
+	font-size: 150%;
+}
+
+h2 {
+	font-size: 130%;
+}
+
+#garantia {
+	border-width: 1px;
+	border-style: solid;
+	padding: 25px;
+	margin: 30px;
+	margin-right: 250px;
+	margin-left: 80px;
+	line-height: 1.9em;
+	font-style: italic;
+	font-family: Georgia, "Times New Roman", Times, Serif;
+}

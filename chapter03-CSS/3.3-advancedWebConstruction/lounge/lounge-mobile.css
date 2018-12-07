@@ -1,0 +1,30 @@
+body{
+	font-size: small;
+	font-family: Verdana, Helvetica, Arial, Sans-serif;
+	line-height: 1.6em;
+}
+
+h1 {
+	color: #007e7e;
+	font-size: 150%;
+}
+
+h2 {
+	color: #007e7e;
+	font-size: 130%;
+}
+
+#garantia {
+	border-color: white;
+	border-width: 1px;
+	border-style: dashed;
+	background-color: #a7cece;
+	line-height: 1.9em;
+	font-style: italic;
+	color: #444;
+	font-family: Georgia, "Times New Roman", Times, Serif;
+}
+
+#footer {
+	color: red;
+}
