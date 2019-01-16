@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Calculator</title>
+</head>
+<body>
+	<h1>CALCULATOR</h1>
+	<script>
+		'use strict';
+
+		function addition(a, b)
+		{
+		    return a + b;
+		}
+
+		let subtraction = function(a, b)
+		{
+		    return a - b;
+		}
+
+		let multiplication = (a, b) => a * b;
+
+		function division(a = 1, b = 1)
+		{
+		    return a / b;
+		}
+
+		let operacion = prompt("Enter an operation (addition / subtraction / multiplication / division)");
+
+		let a = Number(prompt("Enter the first number", 4));
+
+		let b = Number(prompt("Enter the second number", 5));
+
+		switch(operacion)
+		{
+		    case "addition":
+		        console.log(addition(a,b));
+		        break;
+		    case "subtraction":
+		        confirm(subtraction(a,b));
+		        break;
+		    case "multiplication":
+		        document.write(multiplication(a,b));
+		        break;
+		    case "division":
+		        alert(division());
+		        break;
+		    default:
+		        alert("Wrong operation");
+		        break;
+		}
+
+	</script>
+</body>
+</html>
