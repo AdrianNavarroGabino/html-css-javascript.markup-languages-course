@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Ejercicio Libros</title>
+
+	<script type="text/javascript">
+
+		/* Función ajaxJSON */
+		function ajaxJSON() {
+
+			/* Obtención de la capa divResultado para incluir la información del archivo JSON */
+			var resultado = document.getElementById("divResultado");
+
+			/* InstanciacÓn de un objeto de tipo XMLHttpRequest
+			 /* NB: XMLHttpRequest es un objeto ActiveX
+			 o JavaScript que permite obtener de los datos
+			 al format XML, JSON, pero tambi�n HTML o texto
+			 simple con consultas HTTP. */
+			if (window.XMLHttpRequest) {	//Código para IE7+, Firefox, Chrome, Opera, Safari
+				httpRequest = new XMLHttpRequest();
+			} else {	// Código para IE6, IE5
+				httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+
+			/* Apertura del archivo servidorJSON.php */
+			httpRequest.open("GET", "ejercicioLibros.php", true);	// true: modo asíncrono
+
+			/* Definición del tipo de flujo */
+			httpRequest.setRequestHeader("Content-type", "application/json");
+
+			/* Procesamiento terminado cuando el flujo está disponible */
+			httpRequest.onreadystatechange = function () {
+
+				/* Prueba si la consulta ha terminado y están en estado OK */
+				if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+
+					/* Conversión del flujo JSON en objetos Javascript */
+					var datosJSON = JSON.parse(httpRequest.responseText);
+
+					tabla = "<table border=1 cellpadding=10><tr><th>Título</th><th>Autores</th><th>Profundidad</th><th>ISBN</th><th>Librería</th></tr>";
+					/* Recorrido de los objetos Javascript */
+					for (var objet in datosJSON) {
+						tabla += "<tr>";
+						tabla += "<td>"+datosJSON[objet].titulo +"</td><td>"+datosJSON[objet].autores + " </td>";
+						tabla += "<td>"+datosJSON[objet].profundidad +"</td><td>"+datosJSON[objet].isbn + " </td>";
+						tabla += "<td>"+datosJSON[objet].libreria +"</td>";
+						tabla += "</tr>";
+					}
+					tabla += "</table>";
+
+					resultado.innerHTML=tabla;
+				}
+				else resultado.innerHTML ="<br/><h2>Error: No se ha podido acceder a la información</h2>";
+
+			}
+			/* Se envía un valor nulo al servidor como respuesta */
+			httpRequest.send(null);
+
+			/* Mensaje mostrado mientras se espera el procesamiento del archivo alumnos.json */
+			resultado.innerHTML = "Espera de procesamiento JSON ...";
+		}
+
+	</script>
+</head>
+
+<body>
+	<h1>Ejercicio Libros</h1>
+
+	<div id="divResultado"></div>	<!-- Capa para mostrar el resultado -->
+	
+	<script type="text/javascript">
+		ajaxJSON();		// Llamada de la función ajaxJSON para cargar los datos 
+	</script>
+</body>
+</html>
