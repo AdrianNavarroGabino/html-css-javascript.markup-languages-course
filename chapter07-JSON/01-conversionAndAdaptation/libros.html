@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Ejercicio Coches</title>
+    </head>
+    <body>
+        <h1>Ejercicio Libros</h1>
+
+        <script type="text/javascript">
+            var libro1Amazon = {
+                profundidad: "Intermedio",
+                isbn: "8416290628",
+                titulo: "El universo en tu mano",
+                autores: ["Christophe Galfard"],
+                paginas: 464,
+                idioma: "Español",
+                valoracion: "4.5/5"
+            };
+
+            var libro2Amazon = {
+                profundidad: "Basico",
+                isbn: "8493853798",
+                titulo: "Guía del cielo 2019: Para la observación a simple vista de constelaciones y planetas, luna, eclipses y lluvias de meteoros",
+                autores: ["Enrique Velasco Caravaca", "Pedro Velasco Caravaca"],
+                paginas: 64,
+                idioma: "Español",
+                valoracion: "4.7/5"
+            };
+
+            var libro3Amazon = {
+                profundidad: "Basico",
+                isbn: "8449331560",
+                titulo: "El universo en una taza de café: Respuestas sencillas a enigmas de la ciencia y el cosmos (Para curiosos)",
+                autores: ["Jordi Pereyra"],
+                paginas: 336,
+                idioma: "Español",
+                valoracion: "4.6/5"
+            };
+
+            var libro4Amazon = {
+                profundidad: "Basico",
+                isbn: "8449331560",
+                titulo: "Astronomia para Hijos y Padres",
+                autores: ["José Vicente Pascual Gil"],
+                paginas: 164,
+                idioma: "Español",
+                valoracion: "5/5"
+            };
+
+            var libro1CDL = {
+                profundidad: "Intermedio",
+                isbn: "9788446045366",
+                titulo: "El libro de la astronomía",
+                autores: ["VV.AA."],
+                paginas: 352,
+                idioma: "Español"
+            };
+
+            var libro2CDL = {
+                profundidad: "Intermedio",
+                isbn: "9788417056063",
+                titulo: "Guía breve 50 descubrimientos, ideas y conceptos en astronomía",
+                autores: ["François Fressin"],
+                paginas: 160,
+                idioma: "Español"
+            };
+
+            var libro3CDL = {
+                profundidad: "Avanzado",
+                isbn: "9788495414083",
+                titulo: "Astronomía y matemáticas en el antiguo Egipto",
+                autores: ["Ángel Sánchez"],
+                paginas: 224,
+                idioma: "Español"
+            };
+
+            var libro4CDL = {
+                profundidad: "Avanzado",
+                isbn: "9788495359117",
+                titulo: "Astrología y astronomía en el Renacimiento",
+                autores: ["Juan Vernet"],
+                paginas: 176,
+                idioma: "Español"
+            };
+
+            var librosAmazon = [libro1Amazon, libro2Amazon, libro3Amazon, libro4Amazon];
+
+            var librosCasaDelLibro = [libro1CDL, libro2CDL, libro3CDL, libro4CDL];
+
+            var amazon = {
+                nombre: "Amazon",
+                dominio: "https://www.amazon.es/",
+                libros: librosAmazon
+            };
+
+            var casaDelLibro = {
+                nombre: "La Casa del Libro",
+                dominio: "https://www.casadellibro.com/",
+                libros: librosCasaDelLibro
+            };
+
+            var libreria = [amazon, casaDelLibro];
+
+            var tema = {
+                nombre: "Astronomia",
+                librerias: libreria
+            };
+
+            document.write("<h2>" + tema.nombre + "</h2>");
+            tema.librerias.forEach(function(i) {
+                document.write("<h3>" + i.nombre + "</h3>");
+                document.write("Dominio: " + i.dominio + "<br/><br/>");
+
+                i.libros.forEach(function(j) {
+                    document.write("Libro: " + j.titulo + "<br/>");
+                    document.write("Profundidad: " + j.profundidad + "<br/>");
+                    document.write("Autores:");
+                    for( let k = 0; k < j.autores.length; k++ ) {
+                        document.write(" " + j.autores[k]);
+                    }
+                    document.write("<br/>ISBN: " + j.isbn + "<br/>");
+                    document.write("Páginas: " + j.paginas + "<br/>");
+                    document.write("Idioma: " + j.idioma + "<br/>");
+                    if(i.nombre == "Amazon") {
+                        document.write("Valoración: " + j.valoracion + "<br/>");
+                    }
+                    document.write("<br/>");
+                })
+                document.write("<br/><br/><br/>");
+            })
+            
+        </script>
+    </body>
+</html>

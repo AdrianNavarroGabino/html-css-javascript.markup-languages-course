@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Ejercicio Coches</title>
+    </head>
+    <body>
+        <h1>Ejercicio Coches</h1>
+
+        <script type="text/javascript">
+            var pintura = {
+                nombre: "pintura metalizada",
+                valor: 250
+            };
+
+            var extras = [pintura];
+
+            var vehiculo1 = {
+                marca: "ford",
+                modelo: {
+                    nombre: "focus",
+                    color: "gris"
+                },
+                motor: {
+                    nombre: "duratorc 1.4",
+                    combustible: "gasolina"
+                },
+                matricula: "1234AAA",
+                kilometros: 12500,
+                precio_inicial: 12000,
+                precio_oferta: 10000,
+                extra: extras,
+                foto: "11325.jpg"
+            };
+
+            var vehiculo2 = {
+                marca: "ford",
+                modelo: {
+                    nombre: "focus",
+                    color: "gris"
+                },
+                motor: {
+                    nombre: "duratorc 2.0",
+                    combustible: "diesel"
+                },
+                matricula: "1235AAA",
+                kilometros: 125000,
+                precio_inicial: 10000,
+                precio_oferta: 9000,
+                extra: extras,
+                foto: "11328.jpg"
+            };
+
+            var vehiculos = [vehiculo1, vehiculo2];
+
+            var oferta = vehiculos;
+
+            for( let i = 0; i < vehiculos.length; i++ ) {
+                document.write("Coche: " + vehiculos[i].marca + " " +
+                    vehiculos[i].modelo.nombre + " (" +
+                    vehiculos[i].modelo.color + ").<br/>Motor: " +
+                    vehiculos[i].motor.nombre + " (" +
+                    vehiculos[i].motor.combustible + ")<br/>Matrícula: " +
+                    vehiculos[i].matricula + "<br/>Precio inicial: " +
+                    vehiculos[i].precio_inicial + " - Oferta: " +
+                    vehiculos[i].precio_oferta + "<br/>Extra: " +
+                    vehiculos[i].extra[0].nombre + " (" + vehiculos[i].extra[0].valor +
+                    ")<br/>Foto: <img src=\"" + vehiculos[i].foto +
+                    "\" alt=\"Foto del vehículo " + (i + 1) + "\"><br/><br/>");
+            }
+        </script>
+    </body>
+</html>
