@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Ejercicios bloque 1 JavaScript</title>
+	<meta name="author" content="Adrián Navarro Gabino">
+</head>
+<body>
+	<script>
+		function Ejercicio1(lista, valor)
+		{
+			let posicion = -1;
+
+			for(let i = 0; i < lista.length; i++)
+			{
+				if(lista[i] == valor)
+				{
+					posicion = i + 1;
+				}
+			}
+
+			if(posicion != -1)
+			{
+				alert(valor + " está en la posición " + posicion + " de la lista.");
+			}
+			else
+			{
+				alert(valor + " no está en la lista")
+			}
+		}
+
+		function Ejercicio2(lista)
+		{
+			for(let i = 0; i < lista.length; i++)
+			{
+				if(lista[i] % 2 != 0)
+				{
+					return false;
+				}
+			}
+
+			return true;
+		}
+
+		let Ejercicio3 = function(lista)
+		{
+			let contador = 0;
+
+			for(let i = 0; i < lista.length; i++)
+			{
+				if(lista[i] % 2 == 0)
+				{
+					contador++;
+				}
+				if(contador > 1)
+				{
+					return true;
+				}
+			}
+
+			return false;
+		}
+
+		let Ejercicio4 = lista =>
+			lista = lista.map(num => num % 2 == 0 ? num / 2 : num * 2);
+
+		function Ejercicio5(lista)
+		{
+			let lista2 = new Array();
+
+			for(let i = 0; i < lista.length; i++)
+			{
+				if(lista[i] % 2 == 0)
+				{
+					lista2.push(lista[i]);
+				}
+			}
+
+			return lista2;
+		}
+
+		function Ejercicio6(matriz)
+		{
+			for(let i = 0; i < matriz.length; i++)
+			{
+				console.write(matriz[i].reduce((min, num) => num < min ? num : min), matriz[i][0]);
+			}
+
+			for(let i = 0; i < matriz.length; i++)
+			{
+				for(let j = 0; j < matriz.length; j++)
+				{
+					console.write(matriz[i][j].reduce((max, num) => num > max ? num : max, matriz[0][j]));
+				}
+			}
+
+			console.write(matriz.reduce((sum, num) => sum + num, 0));
+		}
+
+		function Ejercicio7(num)
+		{
+			if(num <= 15)
+			{
+				console.write(LeerUnidades(num));
+			}
+			else if(num & 10 == 0)
+			{
+				if(num != 20)
+				{
+					console.write(LeerDecenas(num / 10));
+				}
+				else
+				{
+					console.write(LeerDecenas(num / 10).substring(
+						0,LeerDecenas(num / 10).length - 1) + "e");
+				}
+			}
+			else if(num > 30)
+			{
+				console.write(LeerDecenas(num / 10) + " y " + LeerUnidades(num % 10))
+			}
+			else
+			{
+				console.write(LeerDecenas(num / 10) + LeerUnidades(num % 10));
+			}
+		}
+
+		function LeerUnidades(num)
+		{
+			switch(num)
+			{
+				case 0: return "cero"; break;
+				case 1: return "uno"; break;
+				case 2: return "dos"; break;
+				case 3: return "tres"; break;
+				case 4: return "cuatro"; break;
+				case 5: return "cinco"; break;
+				case 6: return "seis"; break;
+				case 7: return "siete"; break;
+				case 8: return "ocho" break;
+				case 9: return "nueve" break;
+				case 10: return "diez"; break;
+				case 11: return "once"; break;
+				case 12: return "doce"; break;
+				case 13: return "trece"; break;
+				case 14: return "catorce"; break;
+				case 15: return "quince"; break;
+			}
+		}
+
+		function LeerDecenas(num)
+		{
+			switch(num)
+			{
+				case 1: return "dieci"; break;
+				case 2: return "veinti"; break;
+				case 3: return "treinta"; break;
+				case 4: return "cuarenta"; break;
+				case 5: return "cincuenta"; break;
+				case 6: return "sesenta"; break;
+				case 7: return "setenta"; break;
+				case 8: return "ochenta" break;
+				case 9: return "noventa" break;
+			}
+		}
+
+		function Ejercicio8(var1, var2, var3)
+		{
+			console.write(var1.toUpperCase());
+			console.write("El número de caracteres de la variable1 es: " +
+				var1.length);
+			console.write(var1 + " " + var2);
+			console.write(var1);
+			console.write(var1 + " en javascript");
+			console.write(var3.toLowerCase());
+			console.write("La letra de la posición 5 de la variable1 es: " +
+				var1[4]);
+			console.write("La letra j de la variable1 se encuentra " +
+				"en la posición: " + var1.indexOf("j"));
+			console.write("Una porción de la variable2 sería: " +
+				var2.substring(13,19));
+			let frasePartida = var2.split("");
+			console.write("Creamos un nuevo array con el contenido: " +
+				frasePartida);
+			let frasePartida2 = var2.split(" ");
+			console.write("Creamos un nuevo array con el contenido: " +
+				frasePartida2);
+			console.write("Probamos si funciona como array extrayendo el " +
+				"elemento de la posición 5 de Arraycreado: " + frasePartida[4]);
+		}
+
+		function Ejercicio9(nombre = "Producto genérico", precio = 100, impuesto = 21)
+		{
+			nombre = String(prompt("Introduce el nombre del producto:"));
+			precio = Number(prompt("Introduce el precio:"));
+			impuesto = Number(prompt("Introduce el impuesto (sobre 100):"));
+
+			if(precio < 0 || impuesto < 0 || impuesto > 100)
+			{
+				if(precio < 0)
+				{
+					alert("Precio incorrecto");
+				}
+				else
+				{
+					alert("Impuesto incorrecto");
+				}
+			}
+			else
+			{
+				let precioFinal = precio + precio * impuesto / 100;
+				alert(nombre + ": " + precioFinal)
+			}
+		}
+
+		function Ejercicio10()
+		{
+			let miLista = [10, 15, 17, 19];
+
+			console.write(miLista);
+
+			miLista.push("Adiós", 100);
+			miLista.unshift("Hola", 45);
+
+			console.write(miLista);
+
+			miLista.splice(2, 3);
+
+			console.write(miLista);
+
+			miLista.splice(miLista.length - 2, 0, true, false);
+
+			console.write(miLista);
+
+			console.write(miLista.join("==>"));
+		}
+	</script>
+
+</body>
+</html>

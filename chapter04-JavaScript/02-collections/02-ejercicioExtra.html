@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Ejercicio extra JavaScript</title>
+	<meta name="author" content="Adrián Navarro Gabino">
+</head>
+<body>
+	<script>
+		let num1;
+		let num2;
+		let opcion;
+
+		function EjercicioExtra()
+		{
+			let correctNum1 = false;
+			let correctNum2 = false;
+			let listaOTabla = false;
+
+			num1 = Number(prompt("Introduce un número del 1 al 10:"));
+
+			if(num1 < 1 || num1 > 10)
+			{
+				alert("Error, número incorrecto");
+				return false;
+			}
+			else
+			{
+				num2 = Number(prompt("Introduce otro número del 1 al 10:"));
+
+				if(num2 < 1 || num2 > 10)
+				{
+					alert("Error, número incorrecto");
+					return false;
+				}
+				else
+				{
+					opcion = prompt("¿LISTA o TABLA?").toUpperCase();
+
+					if(opcion != "LISTA" && opcion != "TABLA")
+					{
+						alert("Error, opción incorrecta");
+						return false;
+					}
+				}
+			}
+
+			return true;
+		}
+
+
+
+		if(EjercicioExtra())
+		{
+			if(num1 > num2)
+			{
+				let max = num1;
+				let min = num2;
+			}
+			else
+			{
+				let max = num2;
+				let min = num1;
+			}
+
+			if(opcion == "TABLA")
+			{
+				document.write("<table>");
+				for(let i = 1; i <= max; i++)
+				{
+				document.write("<tr><th>" + min + "x" + i +
+					" </th><th>=</th><th>" +
+					min * i + "</th></tr>");
+				}
+				document.write("</table>");
+			}
+		}
+		else
+		{
+			document.write("<ul>")
+			for(let i = 1; i <= max; i++)
+			{
+				document.write("<li>" + min + "x" + i + "=" + min * i);
+			}
+			document.write("</ul>")
+		}
+	</script>
+</body>
+</html>
