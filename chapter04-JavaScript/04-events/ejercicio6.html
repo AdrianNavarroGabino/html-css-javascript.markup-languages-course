@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" charset="utf-8" />
+    <title>Ejercicio Tabla - DOM básico</title>
+    <script type="text/javascript">
+        function modificaBorde(valor) {
+            document.getElementById("miTabla").style.border = valor + "px solid";
+        }
+        function modificaCellSpacing(valor) {
+            document.getElementById("miTabla").cellSpacing = valor;
+        }
+        function modificaCellPadding(valor) {
+            document.getElementById("miTabla").cellPadding = valor;
+        }
+        function modificaColorEncabezado(valor) {
+            document.getElementById("encabezado").style.color = valor;
+        }
+        function modificaColorLineas(valor) {
+            let lineas = document.getElementsByTagName('td');
+
+            for(let i = 0; i < lineas.length; i++)
+            {
+                lineas[i].style.color = valor;
+            }
+        }
+        function modificaLetraEncabezado(valor) {
+            if(valor <= 72)
+            {
+                document.getElementById("encabezado").style.fontSize = valor + "px";
+            }
+        }
+        function modificaLetraLineas(valor) {
+            let lineas = document.getElementsByTagName("td");
+
+            if(valor <= 72)
+            {
+                for(let i = 0; i < lineas.length; i++)
+                {
+                    lineas[i].style.fontSize = valor + "px";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <table id="miTabla" border="1" cellspacing="1" cellpadding="1">
+        <tr id="encabezado">
+            <th>Modelo</th>
+            <th>Stock</th>
+        </tr>
+        <tr>
+            <td>Procesador Intel i5</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>Placa base Gigabyte</td>
+            <td>12</td>
+        </tr>
+        <tr>
+            <td>Procesador Ryzen 5</td>
+            <td>4</td>
+        </tr>
+    </table>
+    <br/><br/>
+    <ul>
+        <li onclick="modificaBorde(prompt('Introduce el tamaño del borde'));">Tamaño de borde</li>
+        <li onclick="modificaCellSpacing(prompt('Introduce el tamaño del cellspacing'));">CellSpacing</li>
+        <li onclick="modificaCellPadding(prompt('Introduce el tamaño del cellpadding'));">CellPadding</li>
+        <li onclick="modificaColorEncabezado(prompt('Introduce el color del encabezado (en inglés)'));">Cambiar color del encabezado</li>
+        <li onclick="modificaColorLineas(prompt('Introduce el color de las líneas (en inglés)'));">Cambiar color del resto de líneas</li>
+        <li onclick="modificaLetraEncabezado(prompt('Introduce el tamaño de letra del encabezado'));">Cambiar el tamaño de letra del encabezado</li>
+        <li onclick="modificaLetraLineas(prompt('Introduce el tamaño de letra del resto de líneas'));">Cambiar el tamaño de letra del resto de líneas</li>
+    </ul>
+</body>
+</html>

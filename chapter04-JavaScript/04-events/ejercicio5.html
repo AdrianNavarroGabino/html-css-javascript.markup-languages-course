@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Adrián Navarro Gabino">
+    <title>El juego de la tabla de multiplicar</title>
+</head>
+<body>
+    <h1>El juego de la tabla de multiplicar</h1>
+    <h2>¿Cuánto es <span id="num1"></span> x <span id="num2"></span>?</h2>
+    <p>
+        <button id="but1" onClick="check(0);"></button>
+        <button id="but2" onClick="check(1);"></button>
+        <button id="but3" onClick="check(2);"></button>
+    </p>
+
+    <script>
+        let count = 0;
+        let right = 0;
+        let wrong = 0;
+
+        check();
+
+        function check(num) {
+            if(count <= 10) {
+                let num1 = document.getElementById("num1");
+                let num2 = document.getElementById("num2");
+
+                if(num1.childNodes.length != 0) {
+                    num1.removeChild(num1.childNodes[0]);
+                    num2.removeChild(num2.childNodes[0]);
+                }
+
+                let num1N = Math.floor((Math.random() * 10) + 1);
+                let num2N = Math.floor((Math.random() * 10) + 1);
+                
+                let num1T = document.createTextNode(num1N);
+                let num2T = document.createTextNode(num2N);
+
+                num1.appendChild(num1T);
+                num2.appendChild(num2T);
+
+                let but1 = document.getElementById("but1");
+                let but2 = document.getElementById("but2");
+                let but3 = document.getElementById("but3");
+
+                if(but1.childNodes.length != 0) {
+                    but1.removeChild(but1.childNodes[0]);
+                    but2.removeChild(but2.childNodes[0]);
+                    but3.removeChild(but3.childNodes[0]);
+                }
+
+                let buttons = [but1, but2, but3];
+                let option = Math.floor(Math.random() * 3);
+
+                buttons[option].appendChild(document.createTextNode(num1N * num2N));
+                buttons[(option + 1) % 3].appendChild(document.createTextNode(Math.floor((Math.random() * 100) + 1)));
+                buttons[(option + 2) % 3].appendChild(document.createTextNode(Math.floor((Math.random() * 100) + 1)));
+
+                if(option == num)
+                    right++;
+                else if((option + 1) % 3 == num || (option + 2) % 3 == num)
+                    wrong++;
+                count++;
+
+                console.log(right, wrong, count);
+            }
+            else {
+                let numberOfRight = document.createElement('h2');
+                let numberOfWrong = document.createElement('h2');
+
+                let rightText = document.createTextNode("Correcto: " + right);
+                let wrongText = document.createTextNode("Incorrecto: " + wrong);
+
+                numberOfRight.appendChild(rightText);
+                numberOfWrong.appendChild(wrongText);
+
+                document.body.appendChild(numberOfRight);
+                document.body.appendChild(numberOfWrong);
+            }
+        }
+    </script>
+</body>
+</html>

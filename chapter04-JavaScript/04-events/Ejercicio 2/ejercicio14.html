@@ -1,0 +1,86 @@
+<!DOCTYPE html >
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Ejercicio 14 - DOM b�sico y atributos XHTML</title>
+
+	<script type="text/javascript">
+		window.onload = function () {
+			document.getElementById("enlace_1").onclick = muestraOculta;
+			document.getElementById("enlace_2").onclick = muestraOculta;
+			document.getElementById("enlace_3").onclick = muestraOculta;
+			document.getElementById("enlace_1").onmouseover = resalta;
+			document.getElementById("enlace_1").onmouseout = resalta;
+			document.getElementById("enlace_2").onmouseover = resalta;
+			document.getElementById("enlace_2").onmouseout = resalta;
+			document.getElementById("enlace_3").onmouseover = resalta;
+			document.getElementById("enlace_3").onmouseout = resalta;
+		}
+		function resalta(elEvento) {
+			var evento = elEvento || window.event;
+			switch (evento.type) {
+				case 'mouseover':
+					this.style.backgroundColor = 'orange';
+					break;
+				case 'mouseout':
+					this.style.backgroundColor = 'white';
+					break;
+			}
+		}
+		function muestraOculta() {
+			var idEnlace = this.id;
+			var partes = idEnlace.split("_");
+			var contenido = document.getElementById("contenidos_" + partes[1]);
+
+			if (contenido.style.display == 'none') {
+				contenido.style.display = 'block';
+				this.innerHTML = "Ocultar contenidos";
+			}
+			else {
+				contenido.style.display = 'none';
+				this.innerHTML = "Mostrar contenidos";
+			}
+		}
+	</script>
+
+	<meta name="author" content="Adrián Navarro Gabino">
+</head>
+
+<body>
+
+	<p id="contenidos_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu,
+		consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et, luctus at, pede.
+		Pellentesque massa ante, ornare id, aliquam vitae, ultrices porttitor, pede. Nullam sit amet nisl elementum elit convallis
+		malesuada. Phasellus magna sem, semper quis, faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper,
+		odio urna consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis
+		scelerisque.
+	</p>
+	<a id="enlace_1" href="#">Ocultar contenidos</a>
+
+	<br/>
+
+	<p id="contenidos_2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu,
+		consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et, luctus at, pede.
+		Pellentesque massa ante, ornare id, aliquam vitae, ultrices porttitor, pede. Nullam sit amet nisl elementum elit convallis
+		malesuada. Phasellus magna sem, semper quis, faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper,
+		odio urna consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis
+		scelerisque.
+	</p>
+	<a id="enlace_2" href="#">Ocultar contenidos</a>
+
+	<br/>
+
+	<p id="contenidos_3">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu,
+		consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et, luctus at, pede.
+		Pellentesque massa ante, ornare id, aliquam vitae, ultrices porttitor, pede. Nullam sit amet nisl elementum elit convallis
+		malesuada. Phasellus magna sem, semper quis, faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper,
+		odio urna consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis
+		scelerisque.
+	</p>
+	<a id="enlace_3" href="#">Ocultar contenidos</a>
+	<br/>
+	<div id="info"></div>
+</body>
+
+</html>
