@@ -1,0 +1,13 @@
+<!ELEMENT tema (libreria+)>
+<!ATTLIST tema nombre ID #REQUIRED>
+<!ELEMENT libreria  (nombre, dominio, libro+)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT dominio (#PCDATA)>
+<!ELEMENT libro (isbn, titulo, autor+, paginas, idioma, valoracion?)>
+<!ATTLIST libro profundidad (Basico | Intermedio | Avanzado) #REQUIRED>
+<!ELEMENT isbn (#PCDATA)>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT autor (#PCDATA)>
+<!ELEMENT paginas (#PCDATA)>
+<!ELEMENT idioma (#PCDATA)>
+<!ELEMENT valoracion (#PCDATA)>

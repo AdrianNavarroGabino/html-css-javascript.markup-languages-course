@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE musica [
+    <!ELEMENT musica (cd+)>
+    <!ATTLIST musica genero ID #REQUIRED>
+    <!ELEMENT cd (titulo, autor, anyo, sello_discografico, cdp, letra_y_musica*, productor*, tiempo_total?, cancion+)>
+    <!ELEMENT titulo (#PCDATA)>
+    <!ELEMENT autor (#PCDATA)>
+    <!ELEMENT anyo (#PCDATA)>
+    <!ELEMENT sello_discografico (#PCDATA)>
+    <!ELEMENT cdp (#PCDATA)>
+    <!ELEMENT letra_y_musica (#PCDATA)>
+    <!ELEMENT productor (#PCDATA)>
+    <!ELEMENT tiempo_total (#PCDATA)>
+    <!ELEMENT cancion (numero, nombre, duracion?)>
+    <!ELEMENT numero (#PCDATA)>
+    <!ELEMENT nombre (#PCDATA)>
+    <!ELEMENT duracion (#PCDATA)>
+]>
+
+<musica genero="rock">
+    <cd>
+        <titulo>A hard day's night</titulo>
+        <autor>The beatles</autor>
+        <anyo>1964</anyo>
+        <sello_discografico>EMI Records</sello_discografico>
+        <cdp>7 46437 2</cdp>
+        <letra_y_musica>John Lennon</letra_y_musica>
+        <letra_y_musica>Paul McCartney</letra_y_musica>
+        <cancion>
+            <numero>1</numero>
+            <nombre>A hard Dar's Night</nombre>
+        </cancion>
+        <cancion>
+            <numero>2</numero>
+            <nombre>I Should Have Known Better</nombre>
+        </cancion>
+        <cancion>
+            <numero>3</numero>
+            <nombre>If I Fell</nombre>
+        </cancion>
+        <cancion>
+            <numero>4</numero>
+            <nombre>I'm Happy Just to Dance With You</nombre>
+        </cancion>
+        <cancion>
+            <numero>5</numero>
+            <nombre>And I Love Her</nombre>
+        </cancion>
+        <cancion>
+            <numero>6</numero>
+            <nombre>Tell Me Why</nombre>
+        </cancion>
+        <cancion>
+            <numero>7</numero>
+            <nombre>Can't Buy Me Love</nombre>
+        </cancion>
+        <cancion>
+            <numero>8</numero>
+            <nombre>Any Time at All</nombre>
+        </cancion>
+        <cancion>
+            <numero>9</numero>
+            <nombre>I'll Cry Instead</nombre>
+        </cancion>
+        <cancion>
+            <numero>10</numero>
+            <nombre>Things We Said Today</nombre>
+        </cancion>
+        <cancion>
+            <numero>11</numero>
+            <nombre>When I Get Home</nombre>
+        </cancion>
+        <cancion>
+            <numero>12</numero>
+            <nombre>You Can't Do That</nombre>
+        </cancion>
+        <cancion>
+            <numero>13</numero>
+            <nombre>I'll Be Back</nombre>
+        </cancion>
+    </cd>
+
+    <cd>
+        <titulo>Abbey Road</titulo>
+        <autor>The beatles</autor>
+        <anyo>1969</anyo>
+        <sello_discografico>EMI Records</sello_discografico>
+        <cdp>7 46446 2</cdp>
+        <cancion>
+            <numero>1</numero>
+            <nombre>Come Together</nombre>
+        </cancion>
+        <cancion>
+            <numero>2</numero>
+            <nombre>Something</nombre>
+        </cancion>
+        <cancion>
+            <numero>3</numero>
+            <nombre>Maxwell's Silver Hammer</nombre>
+        </cancion>
+        <cancion>
+            <numero>4</numero>
+            <nombre>Oh! Darling</nombre>
+        </cancion>
+        <cancion>
+            <numero>5</numero>
+            <nombre>Octopus's Garden</nombre>
+        </cancion>
+        <cancion>
+            <numero>6</numero>
+            <nombre>I Want You (She's So Heavy)</nombre>
+        </cancion>
+        <cancion>
+            <numero>7</numero>
+            <nombre>Here Comes The Sun</nombre>
+        </cancion>
+        <cancion>
+            <numero>8</numero>
+            <nombre>Because</nombre>
+        </cancion>
+        <cancion>
+            <numero>9</numero>
+            <nombre>You Never Give Me Your Money</nombre>
+        </cancion>
+        <cancion>
+            <numero>10</numero>
+            <nombre>Sun King</nombre>
+        </cancion>
+        <cancion>
+            <numero>11</numero>
+            <nombre>Mean Mr Mustard</nombre>
+        </cancion>
+        <cancion>
+            <numero>12</numero>
+            <nombre>Polythene Pam</nombre>
+        </cancion>
+        <cancion>
+            <numero>13</numero>
+            <nombre>She Came in Through the Bathroom Window</nombre>
+        </cancion>
+        <cancion>
+            <numero>14</numero>
+            <nombre>Golden Slumbers</nombre>
+        </cancion>
+        <cancion>
+            <numero>15</numero>
+            <nombre>Carry that Weight</nombre>
+        </cancion>
+        <cancion>
+            <numero>16</numero>
+            <nombre>The End</nombre>
+        </cancion>
+        <cancion>
+            <numero>17</numero>
+            <nombre>Her Majesty</nombre>
+        </cancion>
+    </cd>
+
+    <cd>
+        <titulo>Flowers</titulo>
+        <autor>The Rolling Stones</autor>
+        <anyo>1987</anyo>
+        <sello_discografico>Decca Records</sello_discografico>
+        <cdp>820 139-2</cdp>
+        <letra_y_musica>Jagger</letra_y_musica>
+        <letra_y_musica>Richards</letra_y_musica>
+        <productor>Andrew Loog Oldham</productor>
+        <tiempo_total>36.56</tiempo_total>
+        <cancion>
+            <numero>1</numero>
+            <nombre>Ruby Tuesday</nombre>
+            <duracion>3.15</duracion>
+        </cancion>
+        <cancion>
+            <numero>2</numero>
+            <nombre>Have You Seen Your Mother, Baby, Standing in the Shadow?</nombre>
+            <duracion>2.33</duracion>
+        </cancion>
+        <cancion>
+            <numero>3</numero>
+            <nombre>Let's Spend the Night Together</nombre>
+            <duracion>3.36</duracion>
+        </cancion>
+        <cancion>
+            <numero>4</numero>
+            <nombre>Lady Jane</nombre>
+            <duracion>3.06</duracion>
+        </cancion>
+        <cancion>
+            <numero>5</numero>
+            <nombre>Out of Time</nombre>
+            <duracion>3.42</duracion>
+        </cancion>
+        <cancion>
+            <numero>6</numero>
+            <nombre>My Girl</nombre>
+            <duracion>2.38</duracion>
+        </cancion>
+        <cancion>
+            <numero>7</numero>
+            <nombre>Back Street Girl</nombre>
+            <duracion>3.26</duracion>
+        </cancion>
+        <cancion>
+            <numero>8</numero>
+            <nombre>Please Go Home</nombre>
+            <duracion>3.16</duracion>
+        </cancion>
+        <cancion>
+            <numero>9</numero>
+            <nombre>Mother's Little Helper</nombre>
+            <duracion>2.43</duracion>
+        </cancion>
+        <cancion>
+            <numero>10</numero>
+            <nombre>Take It or Leave It</nombre>
+            <duracion>2.46</duracion>
+        </cancion>
+        <cancion>
+            <numero>11</numero>
+            <nombre>Ride on, Baby</nombre>
+            <duracion>2.53</duracion>
+        </cancion>
+        <cancion>
+            <numero>12</numero>
+            <nombre>Sittin' on a Fence</nombre>
+            <duracion>3.02</duracion>
+        </cancion>
+    </cd>
+</musica>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE BIBLIOTECA SYSTEM "libros.dtd">
+<?xml-stylesheet type="text/css" href="libros.css"?>
+
+<tema nombre="astronomia">
+    <libreria>
+        <nombre>Amazon</nombre>
+
+        <dominio>https://www.amazon.es/</dominio>
+
+        <libro profundidad="Intermedio">
+            <isbn>8416290628</isbn>
+            <titulo>El universo en tu mano</titulo>
+            <autor>Christophe Galfard</autor>
+            <paginas>464</paginas>
+            <idioma>Español</idioma>
+            <valoracion>4.5/5</valoracion>
+        </libro>
+
+        <libro profundidad="Basico">
+            <isbn>8493853798</isbn>
+            <titulo>Guía del cielo 2019: Para la observación a simple vista de constelaciones y planetas, luna, eclipses y lluvias de meteoros</titulo>
+            <autor>Enrique Velasco Caravaca</autor>
+            <autor>Pedro Velasco Caravaca</autor>
+            <paginas>64</paginas>
+            <idioma>Español</idioma>
+            <valoracion>4.7/5</valoracion>
+        </libro>
+
+        <libro profundidad="Basico">
+            <isbn>8449331560</isbn>
+            <titulo>El universo en una taza de café: Respuestas sencillas a enigmas de la ciencia y el cosmos (Para curiosos)</titulo>
+            <autor>Jordi Pereyra</autor>
+            <paginas>336</paginas>
+            <idioma>Español</idioma>
+            <valoracion>4.6/5</valoracion>
+        </libro>
+
+        <libro profundidad="Basico">
+            <isbn>8449331560</isbn>
+            <titulo>Astronomia para Hijos y Padres</titulo>
+            <autor>José Vicente Pascual Gil</autor>
+            <paginas>164</paginas>
+            <idioma>Español</idioma>
+            <valoracion>5/5</valoracion>
+        </libro>
+    </libreria>
+
+    <libreria>
+        <nombre>La Casa del Libro</nombre>
+
+        <dominio>https://www.casadellibro.com/</dominio>
+        
+        <libro profundidad="Intermedio">
+            <isbn>9788446045366</isbn>
+            <titulo>El libro de la astronomía</titulo>
+            <autor>VV.AA.</autor>
+            <paginas>352</paginas>
+            <idioma>Español</idioma>
+        </libro>
+
+        <libro profundidad="Intermedio">
+            <isbn>9788417056063</isbn>
+            <titulo>Guía breve 50 descubrimientos, ideas y conceptos en astronomía</titulo>
+            <autor>François Fressin</autor>
+            <paginas>160</paginas>
+            <idioma>Español</idioma>
+        </libro>
+
+        <libro profundidad="Avanzado">
+            <isbn>9788495414083</isbn>
+            <titulo>Astronomía y matemáticas en el antiguo Egipto</titulo>
+            <autor>Ángel Sánchez</autor>
+            <paginas>224</paginas>
+            <idioma>Español</idioma>
+        </libro>
+
+        <libro profundidad="Avanzado">
+            <isbn>9788495359117</isbn>
+            <titulo>Astrología y astronomía en el Renacimiento</titulo>
+            <autor>Juan Vernet</autor>
+            <paginas>176</paginas>
+            <idioma>Español</idioma>
+        </libro>
+    </libreria>
+</tema>

@@ -1,0 +1,13 @@
+tema { display: block; background-color: rgb(250, 124, 74); }
+libreria { display: block; margin: 20px 50px 20px 50px; }
+nombre { display: block; font-size: 30px; font-weight: bold;
+     color: rgb(56, 10, 165); font-style: italic; }
+dominio { display: block; }
+libro { display: block; margin-left: 50px; margin-top: 20px;
+     margin-bottom: 10px; }
+isbn { display: block; }
+titulo { display: block; }
+autor { display: block; }
+paginas { display: block; }
+idioma { display: block; }
+valoracion { display: block; }
