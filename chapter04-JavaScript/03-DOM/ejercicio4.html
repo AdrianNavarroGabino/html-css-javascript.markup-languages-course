@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<title>La tabla de multiplicar</title>
+<meta name="author" content="Adrián Navarro Gabino">
+
+<style>
+.oculto { display: none; }
+.visible { display: inline; }
+</style>
+
+<script>
+function elegirNumero() {
+  let numero = parseInt(prompt("Introduce un número entre 0 y 10"));
+  
+  while(numero < 0 || numero > 10)
+  {
+    numero = parseInt(("Introduce un número entre 0 y 10"));
+  }
+  return numero;
+}
+
+function tabla(numero) {
+  lista.className = "oculto";
+  
+  let tabla = document.getElementById("tabla");
+
+  let columna1 = [];
+  let columna2 = [];
+
+  for(let i = 1; i <= 10; i++)
+  {
+    columna1[i - 1] = document.createElement("th");
+    columna2[i - 1] = document.createElement("th");
+
+    let fila = document.createElement("tr");
+    let contenidoCol1 = document.createTextNode(numero + " x " + i + " = ");
+    let contenidoCol2 = document.createTextNode(numero * i);
+
+    columna1[i - 1].appendChild(contenidoCol1);
+    columna2[i - 1].appendChild(contenidoCol2);
+
+    fila.appendChild(columna1[i - 1]);
+    fila.appendChild(columna2[i - 1]);
+
+    tabla.appendChild(fila);
+
+    tabla.setAttribute("align", "center");
+    tabla.setAttribute("border", "1");
+  }
+}
+
+function juegoTabla() {
+  let aciertos = 0;
+  let fallos = 0;
+
+  for(let i = 0; i < 10; i++) {
+    let random1 = Math.floor((Math.random() * 10) + 1);
+    let random2 = Math.floor((Math.random() * 10) + 1);
+
+    let resultado = parseInt(prompt("¿" + random1 + " x " + random2 + "?"))
+
+    if(resultado == random1 * random2) {
+      aciertos++;
+    }
+    else {
+      fallos++;
+    }
+  }
+
+  lista.className = "oculto";
+
+  let aciertosYFallos = document.createElement("h1");
+  aciertosYFallos.id = "acyfall";
+  let textoAcYFall = document.createTextNode("Aciertos: " + aciertos +", fallos: " + fallos);
+
+  aciertosYFallos.appendChild(textoAcYFall);
+  aciertosYFallos.setAttribute("align", "center");
+
+  document.body.appendChild(aciertosYFallos);
+}
+</script>
+</head>
+
+<body>
+
+<ol id="lista">
+  <li><input type="button" value="Obtener la tabla de un número" onclick="tabla(elegirNumero());"></li>
+  <li><input type="button" value="Juego de la tabla" onclick="juegoTabla();"></li>
+</ol>
+
+<table id="tabla">
+</table>
+
+</body>
+</html>

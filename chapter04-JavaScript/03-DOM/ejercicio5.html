@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8"/>
+	<title>Ejercicio 5</title>
+	<meta name="author" content="Adrián Navarro Gabino">
+</head>
+<body>
+	<script>
+	function pedirNumero(){
+		let numero = parseInt(prompt("Introduce un número entre 1 y 10"));
+
+	  	while(numero < 1 || numero > 10)
+	  	{
+	    	numero = parseInt(("Introduce un número entre 1 y 10"));
+	  	}
+	  	return numero;
+	}
+
+	function listaOTabla() {
+		let opcion = prompt("¿LISTA o TABLA?").toUpperCase();
+
+		while(opcion != "LISTA" && opcion != "TABLA")
+		{
+			alert("Error, opción incorrecta");
+			opcion = prompt("¿LISTA o TABLA?").toUpperCase();
+		}
+
+		return opcion;
+	}
+
+	function mostrarTabla(num1, num2) {
+		let mayor;
+		let menor;
+
+		if(num1 >= num2) {
+			mayor = num1;
+			menor = num2;
+		}
+		else {
+			mayor = num2;
+			menor = num1;
+		}
+
+		let tabla = document.getElementById("tabla");
+
+		let columna1 = [];
+		let columna2 = [];
+
+		for(let i = 1; i <= mayor; i++)
+		{
+		  columna1[i - 1] = document.createElement("th");
+		  columna2[i - 1] = document.createElement("th");
+
+		  let fila = document.createElement("tr");
+		  let contenidoCol1 = document.createTextNode(menor + " x " + i + " = ");
+		  let contenidoCol2 = document.createTextNode(menor * i);
+
+		  columna1[i - 1].appendChild(contenidoCol1);
+		  columna2[i - 1].appendChild(contenidoCol2);
+
+		  fila.appendChild(columna1[i - 1]);
+		  fila.appendChild(columna2[i - 1]);
+
+		  tabla.appendChild(fila);
+
+		  tabla.setAttribute("border", "solid");
+		}
+	}
+
+	function mostrarLista(num1, num2) {
+		let mayor;
+		let menor;
+
+		if(num1 >= num2) {
+			mayor = num1;
+			menor = num2;
+		}
+		else {
+			mayor = num2;
+			menor = num1;
+		}
+
+		let lista = document.getElementById("lista");
+
+		for(let i = 1; i <= mayor; i++) {
+			let fila = document.createElement("li");
+			let operacion = document.createTextNode(menor + " x " + i + " = " + (menor * i));
+
+			fila.appendChild(operacion);
+
+			lista.appendChild(fila);
+		}
+	}
+	</script>
+</body>
+
+<table id="tabla">
+</table>
+
+<ul id="lista">	
+</ul>
+
+<script>
+	let numero1 = pedirNumero();
+	let numero2 = pedirNumero();
+	let opcion = listaOTabla();
+
+	if(opcion.includes("TABLA")) {
+		mostrarTabla(numero1, numero2);
+	}
+	else if(opcion.includes("LISTA")) {
+		mostrarLista(numero1, numero2);
+	}
+</script>
+
+</html>

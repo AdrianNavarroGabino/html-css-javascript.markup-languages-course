@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<title>Ejercicio 2</title>
+<meta name="author" content="Adrián Navarro Gabino">
+
+<script>
+function anade() {
+  var elemento = document.createElement("li");
+  var texto = document.createTextNode("Elemento de prueba");
+  elemento.appendChild(texto);
+
+  var lista = document.getElementById("lista");
+  lista.appendChild(elemento);
+
+  var nuevoElemento = "<li>Texto de prueba</li>";
+  lista.innerHTML = lista.innerHTML + nuevoElemento;
+}
+</script>
+</head>
+
+<body>
+
+<ul>
+  <li>Lorem ipsum dolor sit amet</li>
+  <li>Consectetuer adipiscing elit</li>
+  <li>Sed mattis enim vitae orci</li>
+  <li>Phasellus libero</li>
+  <li>Maecenas nisl arcu</li>
+</ul>
+
+<ol id="lista">
+  
+</ol>
+
+<input type="button" value="Añadir elemento" onclick="anade();">
+
+</body>
+</html>
