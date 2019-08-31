@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Práctica formularios</title>
+	<script>
+		function ValidaLogin(formulario) {
+			let dialogo = document.getElementById("error");
+			let mensaje = "";
+
+			if (formulario.usuario.value=="" || formulario.usuario.value.length==0 || /^\s+$/.test(formulario.usuario.value))
+			{
+				mensaje += '<p>El usuario no puede estar vacío.</p>';
+			}
+			if (formulario.pass.value=="" || formulario.pass.value.length==0 || /^\s+$/.test(formulario.pass.value))
+			{
+				mensaje += '<p>La contraseña no puede estar vacía.</p>';
+			}
+			if(/$^[A-Za-z0-9]$/.test(formulario.usuario.value))
+			{
+				mensaje += '<p>El usuario sólo puede contener caracteres alfanuméricos.</p>';
+			}
+			if(formulario.usuario.value.length>10)
+			{
+				mensaje += '<p>El usuario no puede tener una longitud mayor de 10.</p>';
+			}
+			if (formulario.usuario.value==formulario.pass.value)
+			{
+				mensaje += '<p>El usuario y la contraseña no pueden ser iguales.</p>';
+			}
+			if(formulario.pass.value.length<6)
+			{
+				mensaje += '<p>La contraseña debe tener una longitud de, al menos, 6 caracteres.</p>';
+			}
+			if(!(/(?=.*[0-9])((?=.*[A-Z])|(?=.*[a-z]))/.test(formulario.pass.value)))
+			{
+				mensaje += '<p>La contraseña debe contener un número y una letra.</p>';
+			}
+
+			if(mensaje != "")
+			{
+				dialogo.innerHTML = '<p>Errores:</p>' + mensaje;
+				return false;
+			}
+		}
+
+		function ValidaRegistro(formulario) {
+			let dialogo = document.getElementById("error");
+			let mensaje = "";
+
+			if (formulario.usuarioReg.value=="" || formulario.usuarioReg.value.length==0 || /^\s+$/.test(formulario.usuarioReg.value))
+			{
+				mensaje += '<p>El usuario no puede estar vacío.</p>';
+			}
+			if (formulario.pass1.value=="" || formulario.pass1.value.length==0 || /^\s+$/.test(formulario.pass1.value))
+			{
+				mensaje += '<p>La contraseña no puede estar vacía.</p>';
+			}
+			if (formulario.usuarioReg.value==formulario.pass1.value)
+			{
+				mensaje += '<p>El usuario y la contraseña no pueden ser iguales.</p>';
+			}
+			if (formulario.pass1.value!=formulario.pass2.value)
+			{
+				mensaje += '<p>Las contraseñas no coinciden.</p>';
+			}
+			if(/$^[A-Za-z0-9]$/.test(formulario.usuarioReg.value))
+			{
+				mensaje += '<p>El usuario sólo puede contener caracteres alfanuméricos.</p>';
+			}
+			if(formulario.usuarioReg.value.length>10)
+			{
+				mensaje += '<p>El usuario no puede tener una longitud mayor de 10.</p>';
+			}
+			if(formulario.pass1.value.length<6)
+			{
+				mensaje += '<p>La contraseña debe tener una longitud de, al menos, 6 caracteres.</p>';
+			}
+			if(!(/(?=.*[0-9])((?=.*[A-Z])|(?=.*[a-z]))/.test(formulario.pass1.value)))
+			{
+				mensaje += '<p>La contraseña debe contener un número y una letra.</p>';
+			}
+
+			let valor=formulario.email.value;
+			if( !(/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/.test(valor)) ) {
+				mensaje += '<p>No es un email válido.</p>';
+			}
+
+			if(!(/^((0[1-9])|([1-2][0-9])|(3[0-1]))\/((0[1-9])|(1[0-2]))\/((19[0-9][0-9])|(20((0[0-9])|(1[0-2]))))$/.test(formulario.fecha.value)))
+			{
+				mensaje += '<p>Fecha no válida.</p>';
+			}
+
+			if(mensaje != "")
+			{
+				dialogo.innerHTML = '<p>Errores:</p>' + mensaje;
+				return false;
+			}
+		}
+	</script>
+</head>
+<body>
+		<form name="formularioLogin" action=”login.php” method=”post” onSubmit="return ValidaLogin(this);">
+			<fieldset>
+				<legend>Login</legend>
+				<label for="usuario">Usuario:</label>
+				<input type="text" name="usuario" id="usuario">
+				<br>
+				<label for="pass">Contraseña:</label>
+				<input type="password" name="pass" id="pass">
+				<br>
+			</fieldset>
+			<input type="submit" value="Login" name="login">
+		</form>
+
+		<form name="formularioRegistro" action=”registro.php” method=”post” onSubmit="return ValidaRegistro(this);">
+			<fieldset>			
+				<legend>Registro</legend>
+				<label for="usuarioReg">Usuario:</label>
+				<input type="text" name="usuarioReg" id="usuarioReg">
+				<br>
+				<label for="pass1">Contraseña:</label>
+				<input type="password" name="pass1" id="pass1">
+				<br>
+				<label for="pass2">Repite la contraseña:</label>
+				<input type="password" name="pass2" id="pass2">
+				<br>
+				<label for="email">Correo electrónico:</label>
+				<input type="text" name="email" id="email">
+				<br>
+				<label for="fecha">Fecha de nacimiento: </label>
+				<input id="fecha" name="fecha" type="text">
+				<br>
+			</fieldset>			
+			<input type="submit" value="Registrar" name="registrar">
+		</form>
+		<div id="error"></div>
+</body>
+</html>
